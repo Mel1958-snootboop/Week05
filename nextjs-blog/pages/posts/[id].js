@@ -54,27 +54,11 @@ export default function Post({ postData }) {
 
 // `getStaticPaths` tells Next.js which dynamic routes to pre-render
 // based on the data returned by `getAllPostIds()`.
-export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory);
- 
-  // Returns an array that looks like this:
-  // [
-  //   {
-  //     params: {
-  //       id: 'ssg-ssr'
-  //     }
-  //   },
-  //   {
-  //     params: {
-  //       id: 'pre-rendering'
-  //     }
-  //   }
-  // ]
-  return fileNames.map((fileName) => {
-    return {
-      params: {
-        id: fileName.replace(/\.md$/, ''),
-      },
-    };
-  });
+
+export async function getStaticPaths() {
+  const paths = getAllPostIds();
+  return {
+    paths,
+    fallback: false,
+  };
 }
