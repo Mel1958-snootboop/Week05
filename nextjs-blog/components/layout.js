@@ -1,13 +1,25 @@
+//components/layout.js
+// Shared layout component used by all pages to provide consistent structure
+// and styling across the site.
 import Head from 'next/head';
+
+// Next.js Image component for optimized image loading and handling.
 import Image from 'next/image';
+
+// CSS module styles specific to the layout component.
 import styles from './layout.module.css';
+
+// Utility CSS module styles for common layout and typographic styles
 import utilStyles from '../styles/utils.module.css';
+
+// Next.js Link component for client-side navigation between pages.
 import Link from 'next/link';
  
 //It provides a consistent structure and style for all pages in the site.
 const name = 'Melanie';
 export const siteTitle = 'Next.js Sample Website';
  
+// Layout component that wraps page content with a header, footer, and meta tags.
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>

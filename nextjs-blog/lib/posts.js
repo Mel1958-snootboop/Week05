@@ -1,11 +1,23 @@
+// lib/posts.js
 import fs from 'fs';
+
+// Node.js built-in modules for handling file paths
 import path from 'path';
+
+// gray-matter parses the metadata in each post's front matter
 import matter from 'gray-matter';
+
+// remark converts markdown content to HTML
 import { remark } from 'remark';
+
+// remark-html is a plugin for remark that enables HTML output
 import html from 'remark-html';
  
+// Directory where markdown posts are stored
 const postsDirectory = path.join(process.cwd(), 'posts');
 
+// Reads markdown files from the /posts directory, parses their metadata,
+// and returns an array of post objects sorted by date.
 export function getSortedPostsData() {
 
   // Get file names under /posts
@@ -37,6 +49,7 @@ export function getSortedPostsData() {
   });
 }
 
+// Returns an array of possible post IDs (filenames) for dynamic routing.
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory);
  
@@ -62,6 +75,7 @@ export function getAllPostIds() {
   });
 }
 
+// Fetches and returns the post data for a given id (filename).
 export async function getPostData(id) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
