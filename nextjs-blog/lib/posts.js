@@ -62,7 +62,7 @@ export function getAllPostIds() {
   });
 }
 
-export function getPostData(id) {
+export async function getPostData(id) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
  
@@ -70,7 +70,7 @@ export function getPostData(id) {
   const matterResult = matter(fileContents);
 
 // Use remark to convert markdown into HTML string
-  const processedContent = remark()
+  const processedContent = await remark()
     .use(html)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
