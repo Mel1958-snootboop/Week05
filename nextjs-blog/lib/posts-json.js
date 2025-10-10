@@ -13,7 +13,7 @@ export function getSortedPostsData() {
     const filePath = path.join(dataDir, 'posts.json');
     const jsonString = fs.readFileSync(filePath, 'utf8');
     const jsonObj = JSON.parse(jsonString);
-    jsonObj.sort(function(a, b) {
+    jsonObj.sort(function (a, b) {
         return a.title.localeCompare(b.title);
     });
   return jsonObj.map(item => {
