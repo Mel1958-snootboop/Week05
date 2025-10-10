@@ -39,23 +39,6 @@ export function getPostData(id) {
     const filePath = path.join(dataDir, 'posts.json');
     const jsonString = fs.readFileSync(filePath, 'utf8');
     const jsonObj = JSON.parse(jsonString);
-    jsonObj.sort(function(a, b) {
-    return a.title.localeCompare(b.title);
-  });
-  return jsonObj.map(item => {
-    return {
-        id: item.id.toString(),
-        title: item.title,
-        date: item.date,
-    }
-  });
-
-}
-
-export function getPostData(id) {
-    const filePath = path.join(dataDir, 'posts.json');
-    const jsonString = fs.readFileSync(filePath, 'utf8');
-    const jsonObj = JSON.parse(jsonString);
     const objReturned = jsonObj.filter(obj => {
         return obj.id.toString() === id;
     });
