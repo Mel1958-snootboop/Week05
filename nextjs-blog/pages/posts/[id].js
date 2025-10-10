@@ -5,7 +5,7 @@ import Layout from '../../components/layout';
 // Helpers for static generation: `getAllPostIds()` is used by
 // `getStaticPaths` to list all post IDs, and `getPostData(id)` fetches and
 // parses a single post's content/metadata (used in `getStaticProps`).
-import { getAllPostIds, getPostData } from '../../lib/posts';
+import { getAllPostIds, getPostData } from '../../lib/posts-json';
 
 // Next.js `Head` lets you modify the document <head> for the page
 // (useful for setting the title, meta tags, etc.).

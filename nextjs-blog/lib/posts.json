@@ -2,19 +2,19 @@
 
    {
        "title": "What Does Mel Say?",
-       "date": "2020-01-01",
+       "date": "2025-01-01",
        "contentHtml": "<p>I personally found this project to be quite <strong>challenging</strong> due to the many steps that it had.</p><p><strong>But!</strong> Once I started to understand the material and tutorial better, along with getting help from my professor, I started to get the hang of it!</p>",
        "id": 1
     },
    {
        "title": "Two Forms of Pre-rendering",
-       "date": "2020-01-01",
+       "date": "2022-01-01",
        "contentHtml": "Next.js has two forms of pre-rendering: <strong>Static Generation</strong> and <strong>Server-side Rendering</strong>. The difference is in <strong>when</strong> it generates the HTML for a page.",
        "id": 2
    },
    {
        "title": "When to Use Static Generation v.s. Server-side Rendering",
-       "date": "2020-01-01",
+       "date": "2022-01-01",
        "contentHtml": "<p>We recommend using <strong>Static Generation</strong> (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.</p>",
        "id": 3
    }

@@ -9,7 +9,7 @@
 
 // Utility that reads post metadata (e.g. from markdown files in /posts)
 // and returns an array of posts sorted by date — used in getStaticProps.
- import { getSortedPostsData } from '../lib/posts';
+ import { getSortedPostsData } from '../lib/posts-json';
 
 // Next.js Link provides client-side navigation (and optional prefetching)
 // for internal routes.
